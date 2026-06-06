@@ -748,6 +748,30 @@ section[id] {
   transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
 }
 
+.product-card-media {
+  display: block;
+  overflow: hidden;
+  margin: -6px -6px 0;
+  border: 1px solid rgba(215, 228, 239, .82);
+  border-radius: calc(var(--radius-card) - 2px);
+  background:
+    radial-gradient(circle at 76% 22%, rgba(0, 170, 220, .16), transparent 32%),
+    linear-gradient(145deg, #ffffff 0%, #f4f9fd 100%);
+  aspect-ratio: 16 / 10;
+}
+
+.product-card-media img {
+  width: 100%;
+  height: 100%;
+  padding: 14px;
+  object-fit: contain;
+  transition: transform var(--transition);
+}
+
+.product-card:hover .product-card-media img {
+  transform: scale(1.035);
+}
+
 .product-top {
   display: flex;
   align-items: center;
@@ -1721,6 +1745,63 @@ section[id] {
   line-height: 1.68;
 }
 
+.visual-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.visual-gallery-card {
+  overflow: hidden;
+  margin: 0;
+  border: 1px solid var(--color-line-soft);
+  border-radius: var(--radius-card);
+  background: #fff;
+  box-shadow: var(--shadow-soft);
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+}
+
+.visual-gallery-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(0, 114, 206, .28);
+  box-shadow: var(--shadow-hover);
+}
+
+.visual-gallery-card img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  padding: 18px;
+  object-fit: contain;
+  background:
+    radial-gradient(circle at 78% 24%, rgba(0, 170, 220, .14), transparent 34%),
+    linear-gradient(145deg, #ffffff 0%, #f3f8fc 100%);
+  transition: transform var(--transition);
+}
+
+.visual-gallery-card:hover img {
+  transform: scale(1.035);
+}
+
+.visual-gallery-card figcaption {
+  display: grid;
+  gap: 6px;
+  padding: 16px 18px 18px;
+  border-top: 1px solid var(--color-line-soft);
+}
+
+.visual-gallery-card strong {
+  color: var(--color-ink);
+  font-family: var(--font-heading);
+  font-size: 16px;
+  line-height: 1.35;
+}
+
+.visual-gallery-card span {
+  color: var(--color-muted);
+  font-size: 13px;
+  line-height: 1.55;
+}
+
 .catalog-toolbar {
   position: relative;
   display: grid;
@@ -2329,6 +2410,7 @@ section[id] {
   .contact-page-grid,
   .process-grid,
   .model-grid,
+  .visual-gallery-grid,
   .catalog-toolbar {
     grid-template-columns: 1fr 1fr;
   }
@@ -2372,6 +2454,7 @@ section[id] {
   .contact-page-grid,
   .footer-grid,
   .category-summary-grid,
+  .visual-gallery-grid,
   .catalog-grid,
   .ordering-grid,
   .accessory-grid,
