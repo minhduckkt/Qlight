@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://rheintacho.com.vn/sitemap.xml
