@@ -9,18 +9,34 @@
     return (value || "")
       .toString()
       .toLocaleLowerCase("vi-VN")
+      .replace(/[øØ]/g, "o")
       .normalize("NFD")
-      .replace(/[\u0300-\u036f]/g, "");
+      .replace(/[\u0300-\u036f]/g, "")
+      .replace(/đ/g, "d")
+      .replace(/[–—−]/g, "-");
+  }
+
+  function searchable(value) {
+    return normalize(value)
+      .replace(/[^a-z0-9]+/g, " ")
+      .replace(/\s+/g, " ")
+      .trim();
+  }
+
+  function compact(value) {
+    return normalize(value).replace(/[^a-z0-9]+/g, "");
   }
 
   function tokenize(value) {
-    return normalize(value).split(/\s+/).filter(Boolean);
+    return searchable(value).split(/\s+/).filter(Boolean);
   }
 
-  function matchesTokens(text, tokens) {
+  function matchesTokens(value, tokens) {
     if (!tokens.length) return true;
+    var text = searchable(value);
+    var compactText = compact(value);
     return tokens.every(function (token) {
-      return text.indexOf(token) !== -1;
+      return text.indexOf(token) !== -1 || compactText.indexOf(compact(token)) !== -1;
     });
   }
 
@@ -60,8 +76,13 @@
 
       cards.forEach(function (card) {
         var categoryMatch = !activeCategory || card.dataset.category === activeCategory;
-        var text = normalize((card.dataset.search || "") + " " + card.textContent);
-        var keywordMatch = matchesTokens(text, tokens);
+        var keywordMatch = matchesTokens(
+          (card.dataset.category || "") + " " +
+          (card.dataset.series || "") + " " +
+          (card.dataset.search || "") + " " +
+          card.textContent,
+          tokens
+        );
         var show = categoryMatch && keywordMatch;
         card.hidden = !show;
         if (show) visible += 1;
@@ -165,9 +186,8 @@
       if (!keepShown) shown = pageSize;
 
       partRows.forEach(function (row) {
-        var text = normalize((row.dataset.search || "") + " " + row.textContent);
         var isMatch =
-          matchesTokens(text, tokens) &&
+          matchesTokens((row.dataset.search || "") + " " + row.textContent, tokens) &&
           selectMatch(row, "model", selects.model) &&
           selectMatch(row, "voltage", selects.voltage) &&
           selectMatch(row, "color", selects.color) &&
