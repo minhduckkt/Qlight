@@ -17,6 +17,22 @@
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@500;600;700;800&amp;display=swap" rel="stylesheet"/>
 <link href="../assets/css/qlight-premium.css" rel="stylesheet"/>
+<style>
+.lookup-status{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;margin:14px 0;color:var(--color-muted);font-size:13px}
+.lookup-status strong{color:var(--color-ink)}
+.lookup-examples{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.lookup-chip{border:1px solid var(--color-line);border-radius:999px;background:var(--color-surface);color:var(--color-blue);padding:6px 11px;font-size:12px;font-weight:800;cursor:pointer}
+.lookup-chip:hover{border-color:rgba(0,114,206,.32);background:rgba(0,114,206,.08)}
+.part-number-link{font-weight:900;color:var(--color-blue)}
+.part-meta{display:block;margin-top:3px;color:var(--color-muted);font-size:12px;line-height:1.45}
+.lookup-actions-cell{display:flex;flex-wrap:wrap;gap:8px;min-width:150px}
+.lookup-actions-cell a{display:inline-flex;align-items:center;justify-content:center;min-height:32px;padding:0 10px;border-radius:var(--radius-control);font-size:12px;font-weight:800}
+.lookup-actions-cell .detail-link{border:1px solid var(--color-line);color:var(--color-blue);background:#fff}
+.lookup-actions-cell .quote-mini{color:#fff;background:var(--gradient-blue)}
+.empty-result{padding:28px;text-align:center;color:var(--color-text);font-size:14px;line-height:1.7}
+.empty-result strong{display:block;margin-bottom:4px;color:var(--color-ink);font-size:17px}
+@media(max-width:760px){.lookup-actions-cell{min-width:0}.part-lookup-table .product-table{min-width:980px}}
+</style>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","name":"Qlight Việt Nam","url":"https://qlight.vn/","description":"Qlight Việt Nam là nhà phân phối chính thức Qlight tại Việt Nam.","contactPoint":[{"@type":"ContactPoint","telephone":"+84-938-888-958","contactType":"sales","areaServed":"VN","availableLanguage":["vi","en"]}]},{"@type":"WebPage","name":"Tra cứu part number Qlight","url":"https://qlight.vn/tra-cuu-part-number/","description":"Tra cứu part number Qlight theo model, điện áp, màu, IP và nhóm sản phẩm."},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://qlight.vn/"},{"@type":"ListItem","position":2,"name":"Tra cứu part number","item":"https://qlight.vn/tra-cuu-part-number/"}]}]}</script>
 </head>
 <body>
@@ -44,7 +60,19 @@
 <button aria-controls="primaryMenu" aria-expanded="false" aria-label="Mở menu" class="menu-toggle" type="button"><span></span><span></span><span></span></button>
 <div class="nav-menu" id="primaryMenu">
 <a class="nav-link" href="../#hero">Trang chủ</a>
-<a class="nav-link" href="../san-pham/">Sản phẩm</a>
+<div class="nav-item nav-item-products">
+<a class="nav-link" href="../san-pham/">S&#7843;n ph&#7849;m</a>
+<div class="product-mega" aria-label="Nh&#243;m s&#7843;n ph&#7849;m Qlight">
+<a href="../san-pham/den-canh-bao-coi-bao-hieu/"><strong>&#272;&#232;n c&#7843;nh b&#225;o &amp; c&#242;i b&#225;o hi&#7879;u</strong><span>206 s&#7843;n ph&#7849;m &middot; beacon, c&#242;i, chu&#244;ng b&#225;o</span></a>
+<a href="../san-pham/den-thap-tin-hieu/"><strong>&#272;&#232;n th&#225;p t&#237;n hi&#7879;u</strong><span>185 s&#7843;n ph&#7849;m &middot; signal tower &#216;45-80mm</span></a>
+<a href="../san-pham/thiet-bi-bao-hieu-hang-nang/"><strong>Thi&#7871;t b&#7883; b&#225;o hi&#7879;u h&#7841;ng n&#7863;ng</strong><span>72 s&#7843;n ph&#7849;m &middot; m&#244;i tr&#432;&#7901;ng kh&#7855;c nghi&#7879;t</span></a>
+<a href="../san-pham/thiet-bi-chong-chay-no/"><strong>Thi&#7871;t b&#7883; ch&#7889;ng ch&#225;y n&#7893;</strong><span>62 s&#7843;n ph&#7849;m &middot; ATEX / IECEx</span></a>
+<a href="../san-pham/den-led-cong-nghiep/"><strong>&#272;&#232;n LED c&#244;ng nghi&#7879;p</strong><span>34 s&#7843;n ph&#7849;m &middot; chi&#7871;u s&#225;ng &amp; t&#237;n hi&#7879;u</span></a>
+<a href="../san-pham/performance-line/"><strong>Performance Line</strong><span>22 s&#7843;n ph&#7849;m &middot; d&#242;ng hi&#7879;u n&#259;ng cao</span></a>
+<a href="../san-pham/smart-factory/"><strong>Smart Factory</strong><span>11 s&#7843;n ph&#7849;m &middot; IO-Link, IoT</span></a>
+<a href="../san-pham/limit-switch/"><strong>Limit Switch</strong><span>6 s&#7843;n ph&#7849;m &middot; c&#244;ng t&#7855;c h&#224;nh tr&#236;nh</span></a>
+</div>
+</div>
 <a class="nav-link nav-active" href="./">Tra part number</a>
 <a class="nav-link" href="../nang-luc/">Năng lực</a>
 <a class="nav-link" href="../blog/">Blog</a>
@@ -84,6 +112,12 @@
 <span>Part number lookup</span>
 <h2>Bảng tra mã sản phẩm Qlight</h2>
 <p>Nhập ví dụ: <strong>S80L</strong>, <strong>DC24V</strong>, <strong>IP65</strong>, <strong>Red</strong>, <strong>QWCD</strong>. Bảng chỉ render một phần kết quả để giữ tốc độ nhanh.</p>
+<div class="lookup-examples" aria-label="Ví dụ tìm kiếm nhanh">
+<button class="lookup-chip" type="button" data-query="S80L">S80L</button>
+<button class="lookup-chip" type="button" data-query="STC56L 24 RAG">STC56L 24 RAG</button>
+<button class="lookup-chip" type="button" data-query="QAD80BZ IP65">QAD80BZ IP65</button>
+<button class="lookup-chip" type="button" data-query="ATEX IP66">ATEX IP66</button>
+</div>
 </div>
 <div class="lookup-panel">
 <label class="lookup-search" for="partKeyword">
@@ -108,16 +142,17 @@
 <tr>
 <th>Part number</th>
 <th>Model</th>
-<th>Kiểu sáng</th>
+<th>Nhóm</th>
 <th>Điện áp</th>
 <th>Màu</th>
-<th>IP</th>
-<th>Size</th>
+<th>Lắp đặt / giao tiếp</th>
+<th>IP / chuẩn</th>
 <th>Mô tả</th>
+<th>Thao tác</th>
 </tr>
 </thead>
 <tbody id="partTableBody">
-<tr><td colspan="8">Đang tải bảng part number...</td></tr>
+<tr><td colspan="9">Đang tải bảng part number...</td></tr>
 </tbody>
 </table>
 </div>
@@ -175,4 +210,271 @@
 <span><a href="../lien-he/">Chính sách bảo mật</a> · <a href="../lien-he/">Điều khoản sử dụng</a></span>
 </div>
 </footer>
-<a aria-label="Chat Z
+<a aria-label="Chat Zalo Qlight Việt Nam" class="floating-contact" href="https://zalo.me/84938888958" rel="noopener noreferrer" target="_blank">Zalo</a>
+<script src="../assets/js/qlight-premium.js"></script>
+<script>
+(function () {
+  var state = {
+    rows: [],
+    pages: {},
+    limit: 80
+  };
+
+  var els = {
+    keyword: document.getElementById("partKeyword"),
+    category: document.getElementById("partCategory"),
+    model: document.getElementById("partModel"),
+    voltage: document.getElementById("partVoltage"),
+    color: document.getElementById("partColor"),
+    ip: document.getElementById("partIp"),
+    count: document.getElementById("partResultCount"),
+    reset: document.getElementById("partReset"),
+    body: document.getElementById("partTableBody")
+  };
+
+  function text(value) {
+    return (value == null ? "" : String(value)).trim();
+  }
+
+  function normalize(value) {
+    return text(value)
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .replace(/đ/g, "d")
+      .replace(/[‐‑‒–—]/g, "-")
+      .replace(/\s+/g, " ");
+  }
+
+  function compact(value) {
+    return normalize(value).replace(/[^a-z0-9]/g, "");
+  }
+
+  function escapeHtml(value) {
+    return text(value).replace(/[&<>"']/g, function (char) {
+      return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[char];
+    });
+  }
+
+  function optionValue(value) {
+    return text(value) || "-";
+  }
+
+  function fillSelect(select, values, maxItems) {
+    if (!select) return;
+    var current = select.value;
+    var unique = Array.from(new Set(values.map(optionValue).filter(Boolean))).sort(function (a, b) {
+      return a.localeCompare(b, "vi", { numeric: true });
+    });
+    if (maxItems) unique = unique.slice(0, maxItems);
+    select.innerHTML = '<option value="">Tất cả</option>' + unique.map(function (value) {
+      return '<option value="' + escapeHtml(value) + '">' + escapeHtml(value) + '</option>';
+    }).join("");
+    if (unique.indexOf(current) !== -1) select.value = current;
+  }
+
+  function detailUrl(row) {
+    var page = state.pages[row.part_number];
+    return page && page.url ? ".." + page.url : "../part-number/";
+  }
+
+  function quoteUrl(row) {
+    var params = new URLSearchParams();
+    params.set("model", text(row.part_number || row.model));
+    if (row.model) params.set("series", text(row.model));
+    if (row.category_name) params.set("category", text(row.category_name));
+    return "../lien-he/?" + params.toString() + "#quote-form";
+  }
+
+  function useful(value) {
+    var v = text(value);
+    return v && v !== "-" && v !== "–";
+  }
+
+  function displayModel(row) {
+    return text(row.data_model || row.model || "-");
+  }
+
+  function displayVoltage(row) {
+    return text(row.data_voltage || row.voltage || "-");
+  }
+
+  function displayColor(row) {
+    return useful(row.data_color) ? text(row.data_color) : (useful(row.color) ? text(row.color) : "-");
+  }
+
+  function displayIp(row) {
+    var dataIp = text(row.data_ip);
+    var ip = text(row.ip);
+    var weight = text(row.weight);
+    if (/^ip/i.test(dataIp)) return dataIp;
+    if (/^ip/i.test(ip)) return ip;
+    if (/^ip/i.test(weight)) return weight;
+    if (useful(row.size) && /ce|ul|atex|iecex/i.test(row.size)) return text(row.size);
+    return dataIp && /can|rs485|ethernet|usb|io-link/i.test(dataIp) ? dataIp : "-";
+  }
+
+  function displayMount(row) {
+    var mount = text(row.mount);
+    if (useful(mount)) return mount;
+    if (useful(row.buzzer) && !/built-in/i.test(row.buzzer)) return text(row.buzzer);
+    return "-";
+  }
+
+  function displayDescription(row) {
+    var desc = text(row.description);
+    if (desc && !/^p\d+/i.test(desc)) return desc;
+    if (useful(row.light_type)) return text(row.light_type);
+    return text(row.source_title || row.category_name || "-");
+  }
+
+  function scoreRow(row, query, tokens, queryCompact) {
+    if (!query) return 1;
+    var pn = normalize(row.part_number);
+    var model = normalize(row.model);
+    var search = normalize([
+      row.part_number,
+      row.model,
+      row.light_type,
+      row.voltage,
+      row.color,
+      row.ip,
+      row.size,
+      row.description,
+      row.category_name,
+      row.search_text
+    ].join(" "));
+    var pnCompact = compact(row.part_number);
+    var modelCompact = compact(row.model);
+    var matchedTokens = tokens.filter(function (token) {
+      var tokenCompact = compact(token);
+      return search.indexOf(token) !== -1 || pnCompact.indexOf(tokenCompact) !== -1 || modelCompact.indexOf(tokenCompact) !== -1;
+    }).length;
+    if (matchedTokens !== tokens.length) return 0;
+
+    var score = matchedTokens * 10;
+    if (pn === query) score += 1000;
+    if (pnCompact === queryCompact) score += 950;
+    if (pn.indexOf(query) === 0 || pnCompact.indexOf(queryCompact) === 0) score += 700;
+    if (model === query || modelCompact === queryCompact) score += 520;
+    if (model.indexOf(query) === 0 || modelCompact.indexOf(queryCompact) === 0) score += 360;
+    if (search.indexOf(query) !== -1) score += 90;
+    return score;
+  }
+
+  function applyFilters() {
+    var query = normalize(els.keyword && els.keyword.value);
+    var queryCompact = compact(query);
+    var tokens = query.split(" ").filter(Boolean);
+    var selected = {
+      category: els.category && els.category.value,
+      model: els.model && els.model.value,
+      voltage: els.voltage && els.voltage.value,
+      color: els.color && els.color.value,
+      ip: els.ip && els.ip.value
+    };
+
+    var results = state.rows
+      .map(function (row) {
+        return { row: row, score: scoreRow(row, query, tokens, queryCompact) };
+      })
+      .filter(function (item) {
+        var row = item.row;
+        return item.score > 0 &&
+          (!selected.category || optionValue(row.category_name) === selected.category) &&
+          (!selected.model || optionValue(row.model) === selected.model) &&
+          (!selected.voltage || optionValue(row.voltage) === selected.voltage) &&
+          (!selected.color || optionValue(row.color) === selected.color) &&
+          (!selected.ip || optionValue(row.ip) === selected.ip);
+      })
+      .sort(function (a, b) {
+        return b.score - a.score || text(a.row.part_number).localeCompare(text(b.row.part_number), "vi", { numeric: true });
+      })
+      .map(function (item) { return item.row; });
+
+    render(results);
+  }
+
+  function render(results) {
+    var shown = results.slice(0, state.limit);
+    if (!results.length) {
+      els.body.innerHTML = '<tr><td colspan="9"><div class="empty-result"><strong>Không tìm thấy part number phù hợp</strong>Thử nhập ngắn hơn, bỏ dấu gạch ngang, hoặc gửi model đang có cho Fast Group để kiểm tra thủ công.</div></td></tr>';
+      els.count.textContent = "Không có kết quả phù hợp";
+      return;
+    }
+
+    els.body.innerHTML = shown.map(function (row) {
+      var part = escapeHtml(row.part_number);
+      var model = escapeHtml(displayModel(row));
+      return '<tr>' +
+        '<td><a class="part-number-link" href="' + detailUrl(row) + '">' + part + '</a><span class="part-meta">PDF page: ' + escapeHtml(row.pdf_page || "-") + '</span></td>' +
+        '<td><strong>' + model + '</strong><span class="part-meta">' + escapeHtml(row.light_type || "") + '</span></td>' +
+        '<td>' + escapeHtml(row.category_name || "-") + '</td>' +
+        '<td>' + escapeHtml(displayVoltage(row)) + '</td>' +
+        '<td>' + escapeHtml(displayColor(row)) + '</td>' +
+        '<td>' + escapeHtml(displayMount(row)) + '</td>' +
+        '<td>' + escapeHtml(displayIp(row)) + '</td>' +
+        '<td>' + escapeHtml(displayDescription(row)) + '</td>' +
+        '<td><div class="lookup-actions-cell"><a class="detail-link" href="' + detailUrl(row) + '">Chi tiết</a><a class="quote-mini" href="' + quoteUrl(row) + '">Hỏi giá</a></div></td>' +
+        '</tr>';
+    }).join("");
+
+    els.count.innerHTML = 'Tìm thấy <strong>' + results.length.toLocaleString("vi-VN") + '</strong> kết quả' +
+      (results.length > shown.length ? ' · đang hiển thị ' + shown.length + ' kết quả đầu tiên' : '');
+  }
+
+  function populateFilters() {
+    fillSelect(els.category, state.rows.map(function (row) { return row.category_name; }));
+    fillSelect(els.model, state.rows.map(function (row) { return row.model; }));
+    fillSelect(els.voltage, state.rows.map(function (row) { return row.voltage; }));
+    fillSelect(els.color, state.rows.map(function (row) { return row.color; }));
+    fillSelect(els.ip, state.rows.map(function (row) { return row.ip; }));
+  }
+
+  function bindEvents() {
+    [els.keyword, els.category, els.model, els.voltage, els.color, els.ip].forEach(function (el) {
+      if (!el) return;
+      el.addEventListener(el.tagName === "INPUT" ? "input" : "change", applyFilters);
+    });
+    if (els.reset) {
+      els.reset.addEventListener("click", function () {
+        [els.keyword, els.category, els.model, els.voltage, els.color, els.ip].forEach(function (el) {
+          if (el) el.value = "";
+        });
+        applyFilters();
+        if (els.keyword) els.keyword.focus();
+      });
+    }
+    document.querySelectorAll(".lookup-chip").forEach(function (button) {
+      button.addEventListener("click", function () {
+        if (!els.keyword) return;
+        els.keyword.value = button.dataset.query || "";
+        applyFilters();
+        els.keyword.focus();
+      });
+    });
+  }
+
+  Promise.all([
+    fetch("../assets/data/part_numbers.json").then(function (res) {
+      if (!res.ok) throw new Error("Không tải được part_numbers.json");
+      return res.json();
+    }),
+    fetch("../assets/data/part_number_pages.json").then(function (res) {
+      if (!res.ok) return {};
+      return res.json();
+    }).catch(function () { return {}; })
+  ]).then(function (payload) {
+    state.rows = payload[0].filter(function (row) { return row && row.part_number; });
+    state.pages = payload[1] || {};
+    populateFilters();
+    bindEvents();
+    applyFilters();
+  }).catch(function (error) {
+    els.count.textContent = "Không tải được dữ liệu part number";
+    els.body.innerHTML = '<tr><td colspan="9"><div class="empty-result"><strong>Lỗi tải dữ liệu</strong>' + escapeHtml(error.message) + '. Vui lòng tải lại trang hoặc liên hệ sales@qlight.vn.</div></td></tr>';
+  });
+})();
+</script>
+</body>
+</html>

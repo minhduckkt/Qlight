@@ -231,6 +231,67 @@ button {
   background: rgba(0, 114, 206, .08);
 }
 
+.nav-item {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.product-mega {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 40;
+  display: grid;
+  width: min(360px, calc(100vw - 32px));
+  gap: 4px;
+  padding: 10px;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-card);
+  background: rgba(255, 255, 255, .98);
+  box-shadow: var(--shadow-premium);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(8px);
+  visibility: hidden;
+  transition: opacity var(--transition), transform var(--transition), visibility var(--transition);
+}
+
+.nav-item-products:hover .product-mega,
+.nav-item-products:focus-within .product-mega {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+  visibility: visible;
+}
+
+.product-mega a {
+  display: grid;
+  gap: 3px;
+  padding: 10px;
+  border-radius: 8px;
+  color: var(--color-text);
+  line-height: 1.35;
+}
+
+.product-mega a:hover,
+.product-mega a:focus {
+  color: var(--color-blue);
+  background: rgba(0, 114, 206, .08);
+}
+
+.product-mega strong {
+  color: var(--color-ink);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.product-mega span {
+  color: var(--color-muted);
+  font-size: 12px;
+  font-weight: 600;
+}
+
 .quote-link {
   margin-left: 8px;
   padding: 0 17px;
@@ -2053,6 +2114,31 @@ h4 {
     justify-content: flex-start;
     min-height: 46px;
     width: 100%;
+  }
+
+  .nav-item {
+    display: grid;
+    width: 100%;
+  }
+
+  .product-mega {
+    position: static;
+    width: 100%;
+    gap: 2px;
+    padding: 0 0 6px 12px;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    opacity: 1;
+    pointer-events: auto;
+    transform: none;
+    visibility: visible;
+  }
+
+  .product-mega a {
+    min-height: 42px;
+    padding: 8px 10px;
   }
 
   .quote-link {
