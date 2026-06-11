@@ -1,3 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://qlight.vn/sitemap.xml
