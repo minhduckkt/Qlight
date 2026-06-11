@@ -10,6 +10,11 @@
 <meta content="Blog kỹ thuật Qlight Việt Nam" property="og:title"/>
 <meta content="Kiến thức chuyên sâu về thiết bị báo hiệu công nghiệp Qlight — đèn tháp, beacon, còi điện, ATEX, IoT." property="og:description"/>
 <meta content="website" property="og:type"/>
+<meta content="https://qlight.vn/assets/images/blog/cach-chon-den-thap-tin-hieu-nha-may.webp" property="og:image"/>
+<meta content="1672" property="og:image:width"/>
+<meta content="941" property="og:image:height"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://qlight.vn/assets/images/blog/cach-chon-den-thap-tin-hieu-nha-may.webp" name="twitter:image"/>
 <link href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%230072CE'/%3E%3Ctext x='32' y='43' text-anchor='middle' font-family='Arial,sans-serif' font-size='34' font-weight='700' fill='white'%3EQ%3C/text%3E%3C/svg%3E" rel="icon" type="image/svg+xml"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -26,7 +31,9 @@
 .blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-bottom:64px}
 .blog-card{border:1px solid var(--color-line-soft);border-radius:var(--radius-card);background:var(--color-surface);overflow:hidden;transition:box-shadow var(--transition),border-color var(--transition);display:flex;flex-direction:column}
 .blog-card:hover{box-shadow:var(--shadow-card);border-color:rgba(0,114,206,.2)}
-.blog-card-thumb{height:180px;display:flex;align-items:center;justify-content:center;font-size:52px;flex-shrink:0}
+.blog-card-thumb{height:180px;display:flex;align-items:center;justify-content:center;font-size:52px;flex-shrink:0;background:var(--color-soft);overflow:hidden}
+.blog-card-thumb img{width:100%;height:100%;display:block;object-fit:cover;transition:transform .35s ease}
+.blog-card:hover .blog-card-thumb img{transform:scale(1.04)}
 .blog-card-body{padding:22px;display:flex;flex-direction:column;flex:1}
 .blog-card-tag{display:inline-block;padding:3px 10px;border-radius:999px;background:rgba(0,114,206,.1);color:var(--color-blue);font-size:11px;font-weight:800;margin-bottom:10px}
 .blog-card-title{font-size:17px;font-weight:800;color:var(--color-ink);line-height:1.35;margin:0 0 10px}
@@ -111,7 +118,7 @@
 
         <!-- Bài nổi bật -->
         <article class="blog-card featured-card" data-cat="huong-dan">
-          <div class="blog-card-thumb" style="background:linear-gradient(135deg,rgba(0,114,206,.08),rgba(0,170,220,.12));">🏭</div>
+          <div class="blog-card-thumb"><img alt="Đèn tháp tín hiệu trên dây chuyền sản xuất hiện đại" loading="eager" src="../assets/images/blog/cach-chon-den-thap-tin-hieu-nha-may.webp"/></div>
           <div class="blog-card-body">
             <span class="blog-card-tag">Hướng dẫn kỹ thuật</span>
             <h2 class="blog-card-title"><a href="cach-chon-den-thap-tin-hieu-nha-may/">Cách chọn đèn tháp tín hiệu cho nhà máy: điện áp, màu sắc, IP và kích thước</a></h2>
@@ -124,7 +131,7 @@
         </article>
 
         <article class="blog-card" data-cat="kien-thuc">
-          <div class="blog-card-thumb" style="background:linear-gradient(135deg,rgba(22,163,74,.07),rgba(34,197,94,.1));">🔒</div>
+          <div class="blog-card-thumb"><img alt="Thiết bị báo hiệu công nghiệp trong thử nghiệm chống nước và bụi" loading="lazy" src="../assets/images/blog/cap-bao-ve-ip-thiet-bi-bao-hieu.webp"/></div>
           <div class="blog-card-body">
             <span class="blog-card-tag">Kiến thức kỹ thuật</span>
             <h2 class="blog-card-title"><a href="cap-bao-ve-ip-thiet-bi-bao-hieu/">Cấp bảo vệ IP là gì? Hướng dẫn đọc và chọn IP cho thiết bị công nghiệp</a></h2>
@@ -135,7 +142,7 @@
         </article>
 
         <article class="blog-card" data-cat="ung-dung">
-          <div class="blog-card-thumb" style="background:linear-gradient(135deg,rgba(245,158,11,.08),rgba(251,191,36,.12));">🏗️</div>
+          <div class="blog-card-thumb"><img alt="Hệ thống Andon với đèn tháp tín hiệu trong nhà máy sản xuất" loading="lazy" src="../assets/images/blog/he-thong-andon-den-thap-tin-hieu.webp"/></div>
           <div class="blog-card-body">
             <span class="blog-card-tag">Ứng dụng công nghiệp</span>
             <h2 class="blog-card-title"><a href="he-thong-andon-den-thap-tin-hieu/">Hệ thống Andon và đèn tháp tín hiệu trong sản xuất Lean Manufacturing</a></h2>
@@ -146,7 +153,7 @@
         </article>
 
         <article class="blog-card" data-cat="kien-thuc">
-          <div class="blog-card-thumb" style="background:linear-gradient(135deg,rgba(220,38,38,.07),rgba(239,68,68,.1));">⚠️</div>
+          <div class="blog-card-thumb"><img alt="Thiết bị báo hiệu chống cháy nổ trong khu vực công nghiệp nguy hiểm" loading="lazy" src="../assets/images/blog/thiet-bi-chong-chay-no-atex.webp"/></div>
           <div class="blog-card-body">
             <span class="blog-card-tag">An toàn & ATEX</span>
             <h2 class="blog-card-title"><a href="thiet-bi-chong-chay-no-atex/">Thiết bị chống cháy nổ ATEX/IECEx: phân vùng nguy hiểm và chọn đèn đúng chuẩn</a></h2>
@@ -157,7 +164,7 @@
         </article>
 
         <article class="blog-card" data-cat="so-sanh">
-          <div class="blog-card-thumb" style="background:linear-gradient(135deg,rgba(124,58,237,.07),rgba(139,92,246,.1));">💡</div>
+          <div class="blog-card-thumb"><img alt="So sánh đèn beacon LED và đèn xenon strobe trên bàn thử nghiệm" loading="lazy" src="../assets/images/blog/den-beacon-led-vs-xenon-strobe.webp"/></div>
           <div class="blog-card-body">
             <span class="blog-card-tag">So sánh sản phẩm</span>
             <h2 class="blog-card-title"><a href="den-beacon-led-vs-xenon-strobe/">So sánh đèn beacon LED và xenon strobe: nên chọn loại nào cho nhà máy?</a></h2>
@@ -168,7 +175,7 @@
         </article>
 
         <article class="blog-card" data-cat="huong-dan">
-          <div class="blog-card-thumb" style="background:linear-gradient(135deg,rgba(0,114,206,.07),rgba(14,116,144,.1));">🔊</div>
+          <div class="blog-card-thumb"><img alt="Còi điện công nghiệp và đèn tín hiệu lắp trên máy móc nhà xưởng" loading="lazy" src="../assets/images/blog/coi-dien-cong-nghiep-lua-chon-dung.webp"/></div>
           <div class="blog-card-body">
             <span class="blog-card-tag">Hướng dẫn kỹ thuật</span>
             <h2 class="blog-card-title"><a href="coi-dien-cong-nghiep-lua-chon-dung/">Còi điện công nghiệp: phân loại, mức dB và cách chọn đúng</a></h2>
@@ -179,7 +186,7 @@
         </article>
 
         <article class="blog-card" data-cat="ung-dung">
-          <div class="blog-card-thumb" style="background:linear-gradient(135deg,rgba(220,38,38,.07),rgba(251,191,36,.1));">🚜</div>
+          <div class="blog-card-thumb"><img alt="Đèn cảnh báo xe nâng và AGV trong kho hàng hiện đại" loading="lazy" src="../assets/images/blog/den-canh-bao-xe-nang-agv.webp"/></div>
           <div class="blog-card-body">
             <span class="blog-card-tag">An toàn kho bãi</span>
             <h2 class="blog-card-title"><a href="den-canh-bao-xe-nang-agv/">Đèn cảnh báo xe nâng và robot AGV: giải pháp an toàn kho bãi hiện đại</a></h2>
@@ -190,7 +197,7 @@
         </article>
 
         <article class="blog-card" data-cat="ung-dung">
-          <div class="blog-card-thumb" style="background:linear-gradient(135deg,rgba(124,58,237,.07),rgba(14,116,144,.1));">🔗</div>
+          <div class="blog-card-thumb"><img alt="Đèn tháp tín hiệu kết nối PLC và dashboard trong nhà máy thông minh" loading="lazy" src="../assets/images/blog/qlight-smart-factory-iot.webp"/></div>
           <div class="blog-card-body">
             <span class="blog-card-tag">Industry 4.0</span>
             <h2 class="blog-card-title"><a href="qlight-smart-factory-iot/">Qlight Smart Factory: tích hợp đèn tháp vào hệ thống IoT và Industry 4.0</a></h2>
@@ -201,7 +208,7 @@
         </article>
 
         <article class="blog-card" data-cat="huong-dan">
-          <div class="blog-card-thumb" style="background:linear-gradient(135deg,rgba(22,163,74,.07),rgba(245,158,11,.1));">🔧</div>
+          <div class="blog-card-thumb"><img alt="Lắp đặt đèn tháp tín hiệu vào tủ điều khiển công nghiệp" loading="lazy" src="../assets/images/blog/huong-dan-lap-dat-den-thap-tin-hieu.webp"/></div>
           <div class="blog-card-body">
             <span class="blog-card-tag">Hướng dẫn lắp đặt</span>
             <h2 class="blog-card-title"><a href="huong-dan-lap-dat-den-thap-tin-hieu/">Hướng dẫn lắp đặt đèn tháp tín hiệu Qlight đúng kỹ thuật — từ A đến Z</a></h2>
@@ -212,7 +219,7 @@
         </article>
 
         <article class="blog-card" data-cat="kinh-nghiem">
-          <div class="blog-card-thumb" style="background:linear-gradient(135deg,rgba(220,38,38,.07),rgba(239,68,68,.1));">📋</div>
+          <div class="blog-card-thumb"><img alt="Thiết bị báo hiệu công nghiệp và checklist mua hàng kỹ thuật" loading="lazy" src="../assets/images/blog/loi-thuong-gap-khi-mua-thiet-bi-bao-hieu.webp"/></div>
           <div class="blog-card-body">
             <span class="blog-card-tag">Kinh nghiệm mua hàng</span>
             <h2 class="blog-card-title"><a href="loi-thuong-gap-khi-mua-thiet-bi-bao-hieu/">5 lỗi thường gặp khi mua thiết bị báo hiệu công nghiệp — và cách tránh</a></h2>
@@ -241,6 +248,33 @@
   <div class="container footer-grid">
     <div class="footer-brand-block">
       <a aria-label="Qlight Việt Nam" class="footer-brand" href="../"><span class="brand-mark">Q</span><span class="brand-text"><strong>Qlight</strong><small>Việt Nam</small></span></a>
-      <p>Fast Group Engineering — nhà phân phối chính thức Qlight tại Việt Nam.</p>
+      <p>Fast Group Engineering — nhà phân phối chính thức Qlight tại Việt Nam. Đèn tháp tín hiệu, đèn cảnh báo, còi điện và thiết bị báo hiệu công nghiệp chính hãng.</p>
     </div>
-    <d
+    <div><h3>Sản phẩm</h3><ul><li><a href="../san-pham/den-thap-tin-hieu/">Đèn tháp tín hiệu</a></li><li><a href="../san-pham/den-canh-bao/">Đèn cảnh báo beacon</a></li><li><a href="../tra-cuu-part-number/">Tra part number</a></li></ul></div>
+    <div><h3>Bài viết</h3><ul><li><a href="cach-chon-den-thap-tin-hieu-nha-may/">Chọn đèn tháp tín hiệu</a></li><li><a href="cap-bao-ve-ip-thiet-bi-bao-hieu/">Cấp bảo vệ IP</a></li><li><a href="he-thong-andon-den-thap-tin-hieu/">Hệ thống Andon</a></li></ul></div>
+    <div><h3>Liên hệ</h3><ul><li><a href="mailto:sales@qlight.vn">sales@qlight.vn</a></li><li><a href="tel:+84938888958">0938 888 958</a></li><li>Fast Group Company Limited</li><li>MST: 0315555189</li></ul></div>
+  </div>
+  <div class="container footer-bottom">
+    <span>© 2026 Qlight Việt Nam · Fast Group Engineering — Nhà phân phối chính thức Qlight tại Việt Nam.</span>
+  </div>
+</footer>
+
+<a aria-label="Chat Zalo" class="floating-contact" href="https://zalo.me/84938888958" rel="noopener noreferrer" target="_blank">Zalo</a>
+<script src="../assets/js/qlight-premium.js"></script>
+<script>
+const blogFilters = document.getElementById('blogFilters');
+if (blogFilters) {
+  const cards = Array.from(document.querySelectorAll('.blog-card'));
+  blogFilters.addEventListener('click', (event) => {
+    const button = event.target.closest('.filter-btn');
+    if (!button) return;
+    const filter = button.dataset.filter;
+    blogFilters.querySelectorAll('.filter-btn').forEach((item) => item.classList.toggle('active', item === button));
+    cards.forEach((card) => {
+      card.style.display = filter === 'all' || card.dataset.cat === filter ? '' : 'none';
+    });
+  });
+}
+</script>
+</body>
+</html>
