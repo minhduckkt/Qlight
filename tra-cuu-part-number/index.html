@@ -101,7 +101,7 @@
 <ul class="hero-card-list">
 <li>239 dòng model / nhóm sản phẩm.</li>
 <li>Nguồn: catalog chính thức Qlight Korea, biên soạn bởi Fast Group.</li>
-<li>Cập nhật định kỳ theo catalog mới nhất từ Qlight Korea.</li>
+<li>Cập nhật định kỳ theo tài liệu kỹ thuật mới nhất từ Qlight Korea.</li>
 </ul>
 </aside>
 </div>
@@ -156,7 +156,7 @@
 </tbody>
 </table>
 </div>
-<p class="form-note lookup-note">Dữ liệu được tổng hợp từ catalog chính thức Qlight Korea. Trước khi đặt hàng, vui lòng liên hệ Fast Group Engineering để xác nhận thông số kỹ thuật và tính sẵn hàng theo catalog/bản vẽ mới nhất.</p>
+<p class="form-note lookup-note">Dữ liệu được tổng hợp từ catalog chính thức Qlight Korea. Trước khi đặt hàng, vui lòng liên hệ Fast Group Engineering để xác nhận thông số kỹ thuật và tính sẵn hàng theo tài liệu kỹ thuật/bản vẽ mới nhất.</p>
 </div>
 </section>
 <section aria-label="Yêu cầu báo giá part number Qlight" class="cta-band">
@@ -407,7 +407,7 @@
       var part = escapeHtml(row.part_number);
       var model = escapeHtml(displayModel(row));
       return '<tr>' +
-        '<td><a class="part-number-link" href="' + detailUrl(row) + '">' + part + '</a><span class="part-meta">PDF page: ' + escapeHtml(row.pdf_page || "-") + '</span></td>' +
+        '<td><a class="part-number-link" href="' + detailUrl(row) + '">' + part + '</a><span class="part-meta">Ghi chú kỹ thuật: ' + escapeHtml(row.pdf_page || "-") + '</span></td>' +
         '<td><strong>' + model + '</strong><span class="part-meta">' + escapeHtml(row.light_type || "") + '</span></td>' +
         '<td>' + escapeHtml(row.category_name || "-") + '</td>' +
         '<td>' + escapeHtml(displayVoltage(row)) + '</td>' +
