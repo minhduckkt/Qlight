@@ -2458,3 +2458,28 @@ h4 {
     bottom: 16px;
   }
 }
+
+
+/* == FGE header/footer identity (auto-added) == */
+.brand-text strong { font-size: 18px; letter-spacing: -.01em; }
+.brand-text small { color: var(--color-blue); font-size: 11px; font-weight: 800; letter-spacing: .07em; text-transform: uppercase; }
+.footer-brand .brand-text small { color: rgba(255,255,255,.6); }
+.brand-group { display: flex; align-items: center; }
+.brand-badge {
+  display: inline-flex; align-items: center; gap: 6px; margin-left: 14px;
+  padding: 5px 11px; border: 1px solid rgba(0,114,206,.28); border-radius: 999px;
+  background: var(--color-soft-blue); color: var(--color-blue-dark);
+  font-size: 11.5px; font-weight: 700; letter-spacing: .01em; white-space: nowrap;
+}
+.brand-badge svg { width: 14px; height: 14px; }
+.footer-bottom { flex-wrap: wrap; align-items: baseline; }
+.footer-bottom > span:first-child { max-width: 720px; line-height: 1.7; }
+.footer-disclaimer { color: rgba(255,255,255,.46); }
+.fg-link { color: inherit; text-decoration: none; border-bottom: 1px solid currentColor; }
+.fg-link:hover { color: #fff; }
+.footer-grid h3 .fg-link { border-bottom: none; }
+.footer-grid h3 .fg-link:hover { color: var(--color-cyan); }
+@media (max-width: 1080px) { .brand-badge { display: none; } }
+@media (max-width: 720px) {
+  .footer-bottom { gap: 10px; }
+}
