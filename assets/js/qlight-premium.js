@@ -94,22 +94,35 @@
       if (button) { button.disabled = true; button.textContent = "Đang gửi…"; }
       show("ok", "Đang gửi yêu cầu…");
 
+      function succeeded() {
+        form.reset();
+        show("ok",
+          "Đã gửi yêu cầu thành công. Fast Group Engineering sẽ phản hồi trong vòng 24 giờ làm việc. " +
+          "Trường hợp gấp, anh/chị gọi <a href=\"tel:+84938888958\">0938 888 958</a>.");
+      }
+
+      function done() {
+        form.setAttribute("data-sending", "0");
+        if (button) { button.disabled = false; button.innerHTML = label; }
+      }
+
+      // Một số trình duyệt chặn đọc phản hồi cross-origin của Apps Script.
+      // Khi đó gửi lại ở chế độ no-cors: dữ liệu vẫn tới Google, chỉ là không đọc được kết quả.
+      function sendOpaque() {
+        return fetch(FORM_ENDPOINT, { method: "POST", mode: "no-cors", body: body })
+          .then(succeeded, function () { show("err", FALLBACK); });
+      }
+
       fetch(FORM_ENDPOINT, { method: "POST", body: body })
         .then(function (response) {
           return response.json().catch(function () { return { ok: response.ok }; });
         })
         .then(function (data) {
           if (data && data.ok === false) throw new Error(data.error || "failed");
-          form.reset();
-          show("ok",
-            "Đã gửi yêu cầu thành công. Fast Group Engineering sẽ phản hồi trong vòng 24 giờ làm việc. " +
-            "Trường hợp gấp, anh/chị gọi <a href=\"tel:+84938888958\">0938 888 958</a>.");
+          succeeded();
         })
-        .catch(function () { show("err", FALLBACK); })
-        .then(function () {
-          form.setAttribute("data-sending", "0");
-          if (button) { button.disabled = false; button.innerHTML = label; }
-        });
+        .catch(sendOpaque)
+        .then(done, done);
     });
   }
 })();
