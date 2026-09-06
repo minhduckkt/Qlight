@@ -1,6 +1,6 @@
 (function () {
   // Dán URL Apps Script (.../exec) vào đây sau khi deploy:
-  var FORM_ENDPOINT = "https://script.google.com/macros/s/AKfycbxr-qWjcgFdJqSWWl8x2LoHXXEgK8W_LeHpShRRDm8O7fomlkB7LHHkuNj3fr9Yg3BA/exec";
+  var FORM_ENDPOINT = "https://script.google.com/macros/s/AKfycbyc8rof-S9SbLC4cGmvwnwpnJiz-vqxgQm6uXxSh3UV81LVRbHF3LgKzkmwunWFPyMN/exec";
 
   var header = document.getElementById("siteHeader");
   var toggle = document.querySelector(".menu-toggle");
