@@ -2483,3 +2483,16 @@ h4 {
 @media (max-width: 720px) {
   .footer-bottom { gap: 10px; }
 }
+
+
+/* == RFQ form status (auto-added) == */
+.form-hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.form-status {
+  display: none; margin: 16px 0 0; padding: 13px 15px;
+  border-radius: var(--radius-control); font-size: 14px; line-height: 1.65;
+}
+.form-status.is-visible { display: block; }
+.form-status.is-ok { background: #e9f8f1; border: 1px solid rgba(22,163,107,.45); color: #0d7048; }
+.form-status.is-err { background: #fdeced; border: 1px solid rgba(229,72,77,.45); color: #b02a2e; }
+.form-status a { color: inherit; font-weight: 700; }
+.contact-form button[disabled] { opacity: .6; cursor: progress; }

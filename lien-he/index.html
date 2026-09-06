@@ -196,6 +196,7 @@
           </div>
         </div>
         <form class="contact-form" id="quoteForm">
+<div class="form-hp" aria-hidden="true"><label>Website<input autocomplete="off" name="_website" tabindex="-1" type="text"/></label></div>
           <div class="form-row">
             <label>Họ và tên <span class="form-required">*</span><input autocomplete="name" name="name" placeholder="Nguyễn Văn A" required type="text"/></label>
             <label>Công ty<input autocomplete="organization" name="company" placeholder="Tên công ty / nhà máy" type="text"/></label>
@@ -226,7 +227,8 @@
             Thông tin kỹ thuật &amp; yêu cầu <span class="form-required">*</span>
             <textarea name="message" placeholder="Ví dụ: Cần 5 bộ đèn tháp 5 tầng, DC24V, IP65, màu R/Y/G/B/W. Hoặc: đang dùng S80L-BWZR, cần báo giá 20 bộ kèm CO/CQ." required rows="6"></textarea>
           </label>
-          <button class="btn btn-primary submit-btn" type="submit"><svg aria-hidden="true" class="icon"><use href="#icon-file"></use></svg>Gửi yêu cầu báo giá</button>
+          <p aria-live="polite" class="form-status" role="status"></p>
+<button class="btn btn-primary submit-btn" type="submit"><svg aria-hidden="true" class="icon"><use href="#icon-file"></use></svg>Gửi yêu cầu báo giá</button>
           <p class="form-actions-note">Thông tin chỉ dùng để liên hệ báo giá và tư vấn kỹ thuật Qlight.</p>
         </form>
         <div class="quote-success" id="quoteSuccess">

@@ -1,4 +1,7 @@
 (function () {
+  // Dán URL Apps Script (.../exec) vào đây sau khi deploy:
+  var FORM_ENDPOINT = "https://script.google.com/macros/s/AKfycbxr-qWjcgFdJqSWWl8x2LoHXXEgK8W_LeHpShRRDm8O7fomlkB7LHHkuNj3fr9Yg3BA/exec";
+
   var header = document.getElementById("siteHeader");
   var toggle = document.querySelector(".menu-toggle");
   var menu = document.getElementById("primaryMenu");
@@ -56,12 +59,57 @@
     } catch (error) {
       // Query string prefill is optional; keep the demo form usable if parsing fails.
     }
-
     form.addEventListener("submit", function (event) {
       event.preventDefault();
-      var formData = new FormData(form);
-      var name = (formData.get("name") || "anh/chị").toString().trim();
-      alert("Cảm ơn " + name + ". Form này hiện là bản demo chờ cấu hình gửi email. Vui lòng liên hệ sales@qlight.vn, hotline 0938 888 958 hoặc Zalo để gửi yêu cầu thật.");
+      if (form.getAttribute("data-sending") === "1") return;
+
+      var status = form.querySelector(".form-status");
+      var button = form.querySelector('button[type="submit"]');
+      var trap = form.querySelector('[name="_website"]');
+      if (trap && trap.value) return;
+
+      function show(kind, html) {
+        if (!status) return;
+        status.className = "form-status is-visible is-" + kind;
+        status.innerHTML = html;
+        status.scrollIntoView({ behavior: "smooth", block: "nearest" });
+      }
+
+      var FALLBACK =
+        'Không gửi được tự động. Anh/chị vui lòng gửi trực tiếp về ' +
+        '<a href="mailto:sales@qlight.vn">sales@qlight.vn</a> hoặc gọi ' +
+        '<a href="tel:+84938888958">0938 888 958</a>.';
+
+      if (!/^https?:\/\//.test(FORM_ENDPOINT)) {
+        show("err", FALLBACK);
+        return;
+      }
+
+      var body = new URLSearchParams();
+      new FormData(form).forEach(function (value, key) { body.append(key, value); });
+      body.append("page", window.location.href);
+
+      var label = button ? button.innerHTML : "";
+      form.setAttribute("data-sending", "1");
+      if (button) { button.disabled = true; button.textContent = "Đang gửi…"; }
+      show("ok", "Đang gửi yêu cầu…");
+
+      fetch(FORM_ENDPOINT, { method: "POST", body: body })
+        .then(function (response) {
+          return response.json().catch(function () { return { ok: response.ok }; });
+        })
+        .then(function (data) {
+          if (data && data.ok === false) throw new Error(data.error || "failed");
+          form.reset();
+          show("ok",
+            "Đã gửi yêu cầu thành công. Fast Group Engineering sẽ phản hồi trong vòng 24 giờ làm việc. " +
+            "Trường hợp gấp, anh/chị gọi <a href=\"tel:+84938888958\">0938 888 958</a>.");
+        })
+        .catch(function () { show("err", FALLBACK); })
+        .then(function () {
+          form.setAttribute("data-sending", "0");
+          if (button) { button.disabled = false; button.innerHTML = label; }
+        });
     });
   }
 })();
