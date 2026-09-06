@@ -231,10 +231,6 @@
 <button class="btn btn-primary submit-btn" type="submit"><svg aria-hidden="true" class="icon"><use href="#icon-file"></use></svg>Gửi yêu cầu báo giá</button>
           <p class="form-actions-note">Thông tin chỉ dùng để liên hệ báo giá và tư vấn kỹ thuật Qlight.</p>
         </form>
-        <div class="quote-success" id="quoteSuccess">
-          <strong>Đã mở email báo giá</strong>
-          <p>Nếu trình duyệt chưa mở email, vui lòng gửi trực tiếp tới <a href="mailto:sales@qlight.vn">sales@qlight.vn</a> hoặc gọi <a href="tel:+84938888958">0938 888 958</a>.</p>
-        </div>
       </div>
     </div>
   </section>
@@ -287,58 +283,5 @@
 
 <a aria-label="Chat Zalo Qlight Việt Nam" class="floating-contact" href="https://zalo.me/84938888958" rel="noopener noreferrer" target="_blank">Zalo</a>
 <script src="../assets/js/qlight-premium.js"></script>
-<script>
-(function () {
-  var form = document.getElementById("quoteForm");
-  var success = document.getElementById("quoteSuccess");
-  if (!form) return;
-
-  form.addEventListener("submit", function (event) {
-    event.preventDefault();
-    event.stopImmediatePropagation();
-
-    var data = new FormData(form);
-    var name = (data.get("name") || "").toString().trim();
-    var company = (data.get("company") || "").toString().trim();
-    var email = (data.get("email") || "").toString().trim();
-    var phone = (data.get("phone") || "").toString().trim();
-    var product = (data.get("product") || "").toString().trim();
-    var quantity = (data.get("quantity") || "").toString().trim();
-    var deadline = (data.get("deadline") || "").toString().trim();
-    var message = (data.get("message") || "").toString().trim();
-
-    if (!name || !email || !phone || !message) {
-      alert("Vui lòng điền đầy đủ họ tên, email, điện thoại và nội dung yêu cầu.");
-      return;
-    }
-
-    var subject = encodeURIComponent("Yêu cầu báo giá Qlight" + (product ? " - " + product : ""));
-    var body = [
-      "Kính gửi Fast Group Engineering,",
-      "",
-      "Tôi muốn yêu cầu báo giá sản phẩm Qlight.",
-      "",
-      "THÔNG TIN LIÊN HỆ",
-      "Họ tên: " + name,
-      company ? "Công ty: " + company : "",
-      "Email: " + email,
-      "Điện thoại: " + phone,
-      "",
-      "YÊU CẦU KỸ THUẬT",
-      product ? "Nhóm sản phẩm: " + product : "",
-      quantity ? "Số lượng: " + quantity : "",
-      deadline ? "Thời gian cần hàng: " + deadline : "",
-      "",
-      message,
-      "",
-      "Trân trọng,",
-      name
-    ].filter(Boolean).join("\n");
-
-    window.location.href = "mailto:sales@qlight.vn?subject=" + subject + "&body=" + encodeURIComponent(body);
-    if (success) success.style.display = "block";
-  }, true);
-})();
-</script>
 </body>
 </html>
